@@ -1,10 +1,10 @@
-# requirements.txt
-torch
-git+https://github.com/openai/CLIP.git
-numpy
-matplotlib
-Pillow
-streamlit
+# # requirements.txt
+# torch
+# git+https://github.com/openai/CLIP.git
+# numpy
+# matplotlib
+# Pillow
+# streamlit
 
 # app.py (Streamlit code)
 import streamlit as st
