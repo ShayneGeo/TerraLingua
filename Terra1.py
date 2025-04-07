@@ -17,7 +17,7 @@ import numpy as np
 def main():
     st.title("CLIP-Based Classification App")
 
-    #device = "cpu"  # or "cuda" if torch.cuda.is_available() else "cpu"
+    device = "cpu"  # or "cuda" if torch.cuda.is_available() else "cpu"
     #model, preprocess = clip.load("ViT-B/32", device=device)
 
     @st.cache_resource
