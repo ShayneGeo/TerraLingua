@@ -99,7 +99,7 @@ def main():
         st.image(img, caption="Uploaded Image", use_column_width=True)
 
         image = preprocess(img).unsqueeze(0).to(device)
-        text = clip.tokenize(["a photo of wildfire fire", "a photo of no wildfire fire"]).to(device)
+        text = clip.tokenize(["wildfire fire", "no wildfire fire"]).to(device)
 
         with torch.no_grad():
             image_features = model.encode_image(image)
