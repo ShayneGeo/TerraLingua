@@ -76,9 +76,8 @@ def main():
 
     st.write("""
     This application leverages OpenAI's CLIP model to classify uploaded images 
-    as either has wildfire or not. By using CLIP’s powerful zero-shot 
-    capabilities, users can quickly analyze images for fire detection, 
-    potentially aiding in real-time monitoring and decision-making.
+    as either has wildfire or not. By using CLIP’s pretrained 
+    capabilities, users can quickly analyze images for fire detection.
 
     CLIP uses a zero-shot classification approach, comparing the uploaded image 
     to user-provided text prompts (for example, “Wildfire Fire” vs. “No Wildfire Fire”) 
