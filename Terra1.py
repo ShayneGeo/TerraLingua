@@ -17,8 +17,15 @@ import numpy as np
 def main():
     st.title("CLIP-Based Classification App")
 
-    device = "cpu"  # or "cuda" if torch.cuda.is_available() else "cpu"
-    model, preprocess = clip.load("ViT-B/32", device=device)
+    #device = "cpu"  # or "cuda" if torch.cuda.is_available() else "cpu"
+    #model, preprocess = clip.load("ViT-B/32", device=device)
+
+    @st.cache_resource
+    def load_clip_model():
+        return clip.load("ViT-B/32", device="cpu")
+    
+    model, preprocess = load_clip_model()
+
 
     uploaded_file = st.file_uploader("Upload an Image", type=["jpg", "jpeg", "png", "jfif"])
     if uploaded_file is not None:
