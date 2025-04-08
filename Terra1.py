@@ -93,6 +93,8 @@ def main():
     and returning the most likely match without requiring a separate training step.
     """)
 
+    st.image("WIILDFIREprob.jpg", caption="CLIP-based classification output", use_container_width=True)
+    
     device = "cpu"  # or "cuda" if torch.cuda.is_available() else "cpu"
 
     @st.cache_resource
