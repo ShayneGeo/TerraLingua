@@ -91,6 +91,9 @@ def main():
     CLIP uses a zero-shot classification approach, comparing the uploaded image 
     to user-provided text prompts (for example, “Wildfire Fire” vs. “No Wildfire Fire”) 
     and returning the most likely match without requiring a separate training step.
+    the model predicts a 77.5% probability that the image contains a wildfire, 
+    while assigning a 22.5% probability that it does not, 
+    indicating strong confidence in the presence of active fire in the scene.
     """)
 
     st.image("WILDFIREprob.jpg", caption="CLIP-based classification output", use_container_width=True)
@@ -106,7 +109,7 @@ def main():
     uploaded_file = st.file_uploader("Upload an Image", type=["jpg", "jpeg", "png", "jfif"])
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
-        st.image(img, caption="Uploaded Image", use_container_width=True)
+        st.image(img, caption="Uploaded your own image and test the model", use_container_width=True)
         start_time = time.time()
 
         image = preprocess(img).unsqueeze(0).to(device)
@@ -132,7 +135,7 @@ def main():
         st.pyplot(fig)
 
     st.write("---")
-    st.subheader("Additional Visual Reference from Git")
+    st.subheader("IoT Implimentation ")
     st.image('camera.jpg', caption=" ")  # Replace with your actual Git image URL
     
     st.subheader("Next Steps for IoT Deployment")
