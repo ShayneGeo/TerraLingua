@@ -135,6 +135,8 @@ import clip
 from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
+import time  # <-- Import time
+
 
 def main():
     st.title("CLIP-Based Fire Identification App for Real-Time Tracking")
@@ -161,6 +163,7 @@ def main():
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
         st.image(img, caption="Uploaded Image", use_container_width=True)
+        start_time = time.time()  # <-- Start timer
 
         image = preprocess(img).unsqueeze(0).to(device)
         text = clip.tokenize(["wildfire fire", "no wildfire fire"]).to(device)
@@ -170,6 +173,10 @@ def main():
             text_features = model.encode_text(text)
             logits_per_image, logits_per_text = model(image, text)
             probs = logits_per_image.softmax(dim=-1).cpu().numpy()[0]
+
+        end_time = time.time()  # <-- End timer
+        elapsed_time = end_time - start_time
+        st.write(f"⏱️ Inference Time: {elapsed_time:.3f} seconds")
 
         labels = ["Yes", "No"]
         fig, ax = plt.subplots(figsize=(5, 3))
