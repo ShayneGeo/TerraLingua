@@ -106,10 +106,10 @@ def main():
     
     model, preprocess = load_clip_model()
 
-    uploaded_file = st.file_uploader("Upload an Image", type=["jpg", "jpeg", "png", "jfif"])
+    uploaded_file = st.file_uploader("Upload your own image to test the model", type=["jpg", "jpeg", "png", "jfif"])
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
-        st.image(img, caption="Uploaded your own image and test the model", use_container_width=True)
+        st.image(img, caption="Uploaded image", use_container_width=True)
         start_time = time.time()
 
         image = preprocess(img).unsqueeze(0).to(device)
