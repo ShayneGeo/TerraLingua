@@ -131,7 +131,7 @@ def main():
 
     st.write("---")
     st.subheader("Additional Visual Reference from Git")
-    st.image("https://github.com/ShayneGeo/TerraLingua/blob/3dd6617f25781146f9d666987fcd2acbdeb4aac5/camera.jpg", caption=" ")  # Replace with your actual Git image URL
+    st.image('camera.jpg', caption=" ")  # Replace with your actual Git image URL
     
     st.subheader("Next Steps for IoT Deployment")
     st.write("""
