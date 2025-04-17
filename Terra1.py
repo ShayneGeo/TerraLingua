@@ -174,7 +174,7 @@ import numpy as np
 import time
 
 def main():
-    st.title("GeoLingua Project One \n CLIP-Based Fire Identification for Real-Time Tracking")
+    st.title("CLIP Project One \n CLIP-Based Fire Identification for Real-Time Tracking")
     st.write("""
     This application leverages OpenAI's CLIP model to classify uploaded images 
     as either has wildfire or not. By using CLIP’s pretrained capabilities, 
