@@ -1,10 +1,10 @@
-torch
-git+https://github.com/openai/CLIP.git
-numpy
-matplotlib
-Pillow
-streamlit
-rasterio
+#torch
+#git+https://github.com/openai/CLIP.git
+#numpy
+#matplotlib
+#Pillow
+#streamlit
+#rasterio
 streamlit==1.39.0
 numpy==1.26.4
 pandas==2.2.2
